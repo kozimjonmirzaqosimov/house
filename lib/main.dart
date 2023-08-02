@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:house/src/ui/home/home_screen.dart';
+import 'package:house/src/ui/widget/estates_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  HomeScreen()
+      home:  EstatesWidget()
     );
   }
 }
