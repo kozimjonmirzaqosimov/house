@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:house/src/ui/widget/estates_widget.dart';
 
 import '../widget/rend_widget.dart';
 
@@ -15,47 +15,72 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-
-          ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: (data.length + _greedCount - 1) ~/ _greedCount,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(width: 20,),
-                      Expanded(
-                        child: RentWidget(
-                          price: '290',
-                          image: 'assets/images/img.png',
-                          name: 'Wings Tower',
-                          star: 5,
-                          location: 'Jakarta, Indonesia',
+          SizedBox(
+            height: 270,
+            child: ListView.builder(
+              itemCount: 7,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int index) {
+                return                 EstateWidget(
+                    location: "location",
+                    name: "name",
+                    time: "time",
+                    star: 4.9,
+                    prise: 295,
+                    image: "assets/images/shape.png");
+              },
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: (data.length + _greedCount - 1) ~/ _greedCount,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
-                      SizedBox(width: 10,),
-                      Expanded(
-                        child: index * _greedCount + 1 >=
-                            data.length ?SizedBox(width: 160,): RentWidget(
-                          price: '290',
-                          image: 'assets/images/img.png',
-                          name: 'Wings Tower',
-                          star: 5,
-                          location: 'Jakarta, Indonesia',
+                        Expanded(
+                          child: RentWidget(
+                            price: '290',
+                            image: 'assets/images/img.png',
+                            name: 'Wings Tower',
+                            star: 5,
+                            location: 'Jakarta, Indonesia',
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 20,),
-                    ],
-                  ),
-                ],
-              );
-            },
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: index * _greedCount + 1 >= data.length
+                              ? SizedBox(
+                                  width: 160,
+                                )
+                              : RentWidget(
+                                  price: '290',
+                                  image: 'assets/images/img.png',
+                                  name: 'Wings Tower',
+                                  star: 5,
+                                  location: 'Jakarta, Indonesia',
+                                ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                      ],
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
-
     );
   }
 }
