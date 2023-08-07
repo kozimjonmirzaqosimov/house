@@ -24,10 +24,10 @@ class HomeScreen extends StatelessWidget {
                 return                 EstateWidget(
                     location: "location",
                     name: "name",
-                    time: "time",
+                  full_name: 'full name',
                     star: 4.9,
                     prise: 295,
-                    image: "assets/images/shape.png");
+                    image: "assets/images/shape.png", );
               },
             ),
           ),

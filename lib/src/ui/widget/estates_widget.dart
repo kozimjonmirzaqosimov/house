@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EstateWidget extends StatefulWidget {
-  final String location, name, time, month;
+  final String location, name, full_name, month;
   final double star;
   final int prise;
   final String image;
@@ -11,7 +11,7 @@ class EstateWidget extends StatefulWidget {
       {super.key,
       required this.location,
       required this.name,
-      required this.time,
+      required this.full_name,
       this.month = 'month',
       required this.star,
       required this.prise,
@@ -98,7 +98,7 @@ class _EstateWidgetState extends State<EstateWidget> {
                   ),
                   SizedBox(
                     width: 100,
-                    child: Text(widget.time,
+                    child: Text(widget.full_name,
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w700,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:house/src/ui/home/home_screen.dart';
+import 'package:house/src/ui/widget/agents_widget.dart';
 import 'package:house/src/ui/widget/estates_widget.dart';
+import 'package:house/src/ui/widget/location_widget.dart';
+import 'package:house/src/ui/widget/rectangle_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:HomeScreen()
+      home:RectangleWidget()
     );
   }
 }
