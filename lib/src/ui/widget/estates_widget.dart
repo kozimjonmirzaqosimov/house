@@ -25,14 +25,9 @@ class _EstateWidgetState extends State<EstateWidget> {
   @override
   bool  _favourite =false;
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 90,
-        ),
-        Container(
+    return Container(
           width: 270,
-          height: 160,
+          height: 170,
           decoration: BoxDecoration(
               color: Colors.white70, borderRadius: BorderRadius.circular(10)),
           child: Row(
@@ -43,13 +38,13 @@ class _EstateWidgetState extends State<EstateWidget> {
               Stack(
                 children: [
                   Container(
-                    width: 140,
-                    height: 150,
-                    child: Image.asset(widget.image),
+                    width: 160,
+                    height: 180,
+                    child: Image.asset(widget.image,fit: BoxFit.cover,),
                   ),
                   Positioned(
                     left: 10,
-                    top: 12,
+                    top: 10,
                     child: GestureDetector(
                       onTap: (){
                         setState(() {
@@ -96,63 +91,75 @@ class _EstateWidgetState extends State<EstateWidget> {
                   SizedBox(
                     height: 15,
                   ),
-                  SizedBox(
-                    width: 100,
-                    child: Text(widget.full_name,
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xff234F68))),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 6.0,top: 30),
+                    child: SizedBox(
+                      width: 100,
+                      child: Text(widget.full_name,
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xff234F68))),
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 20,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0,right: 20),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(
+                            Icons.star,
+                            color: Colors.yellow,
+                            size: 20,
+                          ),
                         ),
-                      ),
-                      Text(
-                        widget.star.toString(),
-                        style: TextStyle(fontSize: 10, color: Colors.black),
-                      )
-                    ],
+                        Text(
+                          widget.star.toString(),
+                          style: TextStyle(fontSize: 10, color: Colors.black),
+                        )
+                      ],
+                    ),
                   ),
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(top: 19.0),
                         child: Icon(
                           Icons.location_on,
                           size: 20,
                         ),
                       ),
-                      Text(
-                        widget.location,
-                        style: TextStyle(fontSize: 8, color: Colors.black),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 19.0),
+
+                        child: Text(
+                          widget.location,
+                          style: TextStyle(fontSize: 8, color: Colors.black),
+                        ),
                       ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        '\$${widget.prise}',
-                        style: TextStyle(fontSize: 12, color: Colors.black),
-                      ),
-                      Text(
-                        widget.month,
-                        style: TextStyle(fontSize: 8, color: Colors.black),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 13.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          '\$${widget.prise}',
+                          style: TextStyle(fontSize: 12, color: Colors.black),
+                        ),
+                        Text(
+                          widget.month,
+                          style: TextStyle(fontSize: 8, color: Colors.black),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
             ],
           ),
-        ),
-      ],
-    );
+        );
+
   }
 }

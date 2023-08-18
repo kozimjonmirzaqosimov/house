@@ -17,7 +17,16 @@ class LocationWidget extends StatelessWidget {
       height: 56,
       child: Row(
         children: [
-          Image.asset(image),
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50)
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(image,fit: BoxFit.cover,)),
+          ),
           Text(name),
         ],
       ),

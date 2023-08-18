@@ -8,18 +8,22 @@ class AgentsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      width: 75,
-      height: 100,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15)),
+      width: 96,
+      height: 76,
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(100),
-            child: Image.asset(
-              image,
-              width: 70,
-              height: 70,
-            ),),
-          SizedBox(height: 8,),
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50)
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(image,fit: BoxFit.cover,)),
+          ),
           Text(name),
         ],
       ),
